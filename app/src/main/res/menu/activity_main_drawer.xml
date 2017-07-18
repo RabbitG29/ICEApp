@@ -3,33 +3,42 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/introduce_ICE"
+            android:title="학과소개" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/professor"
+            android:title="교수 및 연구" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/about_ICE"
+            android:title="학사안내" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/about_class"
+            android:title="교과안내" />
+        <item
+            android:id="@+id/student_action"
+            android:title="학생활동" />
+        <item
+            android:id="@+id/graduation_project"
+            android:title="정보통신 종합설계" />
+        <item
+            android:id="@+id/information"
+            android:title="정보마당" />
+        <item
+            android:id="@+id/semina_room"
+            android:title="세미나실 예약" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="more"
+        android:menuCategory="alternative">
         <menu>
+            <group>
             <item
                 android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
                 android:title="Share" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
+            </group>
         </menu>
     </item>
 
