@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        verifyDialog();
     }
 
     @Override
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void verifyDialog(){
+   /*  private void verifyDialog(){
         Log.e("response","Verify!!");
         LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         final LinearLayout verifyLayout = (LinearLayout) vi.inflate(R.layout.verify_dialog, null);
@@ -108,9 +106,9 @@ public class MainActivity extends AppCompatActivity
 
             }
         }).show();
-    }
+    } */
 
-    public class galleryAdapter extends BaseAdapter {
+    public class galleryAdapter extends BaseAdapter { // 이미지 플리퍼
 
         private final Context mContext;
         LayoutInflater inflater;
@@ -145,7 +143,7 @@ public class MainActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item) { // 각각의 버튼을 눌렀을 때 어떻게 동작하는지
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 

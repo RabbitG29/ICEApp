@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/login_1"
+        android:id="@+id/imageView2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="50dp"
+        android:layout_marginTop="50dp"
+
+        >
+
+        <TextView
+            android:id="@+id/idnumber"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="학   번"/>
+
+        <EditText
+            android:id="@+id/input_idnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:hint="학번 입력"
+            android:layout_alignBaseline="@+id/idnumber"
+            android:layout_alignBottom="@+id/idnumber"
+            android:layout_toRightOf="@+id/idnumber"
+            android:layout_toEndOf="@+id/idnumber" />
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idnumber"
+            android:layout_marginTop="15dp"
+            android:text="비밀번호"/>
+
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_toRightOf="@id/password"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:hint="비밀번호 입력"/>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/password"
+            android:id="@+id/auto_login"
+            android:text="자동 로그인"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:id="@+id/button_login"
+            android:layout_below="@id/auto_login" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_login"
+            android:layout_centerHorizontal="true"
+            android:text="비밀번호를 잊어버렸나요?"
+            android:id="@+id/button_password"
+            android:textSize="20sp"
+            android:background="#00ff0000"
+            />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>
