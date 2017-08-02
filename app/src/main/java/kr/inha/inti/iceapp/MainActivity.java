@@ -2,6 +2,7 @@ package kr.inha.inti.iceapp;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -87,6 +88,138 @@ public class MainActivity extends AppCompatActivity
             @Override
             public boolean onChildClick(ExpandableListView expandableListView, View view, int i, int i1, long l) {
                 //Log.d("DEBUG", "submenu item clicked");
+                Toast.makeText(getApplicationContext(), "c click = " + i1,
+                        Toast.LENGTH_SHORT).show();
+                if(i==0) // 학과소개
+                {
+                    if(i1==0) // 인사말
+                    {
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ice.inha.ac.kr/?page_id=6"));
+
+                        startActivity(intent);
+                    }
+                    else if(i1==1) // 교육목표 및 연혁
+                    {
+
+                    }
+                    else if(i1==2) // 교육 시설
+                    {
+
+                    }
+                    else if(i1==3) // 졸업 후 진로
+                    {
+
+                    }
+                    else if(i1==4) // 위치 및 연락처
+                    {
+
+                    }
+                }
+                else if(i==1) // 교수 및 연구
+                {
+                    if(i1==0) // 교수 소개
+                    {
+
+                    }
+                    else if(i1==1) // 연구실 소개
+                    {
+
+                    }
+                }
+                else if(i==2) // 학사안내
+                {
+                    if(i1==0) // 학사일정
+                    {
+
+                    }
+                    else if(i1==1) // 졸업 요건
+                    {
+
+                    }
+                    else if(i1==2) // 장학금 안내
+                    {
+
+                    }
+                }
+                else if(i==3) // 교과안내
+                {
+                    if(i1==0) // 교육과정
+                    {
+
+                    }
+                    else if(i1==1) // ABEEK
+                    {
+
+                    }
+                    else if(i1==2) // 이수체계도
+                    {
+
+                    }
+                }
+                else if(i==4) // 학생활동
+                {
+                    if(i1==0) // 자유게시판
+                    {
+
+                    }
+                    else if(i1==1) // 학생회
+                    {
+
+                    }
+                    else if(i1==2) // 소모임
+                    {
+
+                    }
+                    else if(i1==3) // 사진으로 보는 ICE
+                    {
+
+                    }
+                }
+                else if(i==5) // 정보통신 종합설계
+                {
+                    if(i1==0) // 공지사항
+                    {
+
+                    }
+                    else if(i1==1) // 팀원모집
+                    {
+
+                    }
+                    else if(i1==2) // 연도별 논문
+                    {
+
+                    }
+                }
+                else if(i==6) // 정보마당
+                {
+                    if(i1==0) // 학과 공지사항
+                    {
+
+                    }
+                    else if(i1==1) // 대학원 공지사항
+                    {
+
+                    }
+                    else if(i1==2) // FAQ
+                    {
+
+                    }
+                    else if(i1==3) // 취업정보
+                    {
+
+                    }
+                }
+                else if(i==7) // 세미나실 예약
+                {
+                    if(i1==0) // ICE CAFE
+                    {
+
+                    }
+                    else if(i1==1) //  대학원생 세미나실
+                    {
+
+                    }
+                }
                 return false;
             }
         });
@@ -186,19 +319,6 @@ public class MainActivity extends AppCompatActivity
         client.disconnect();
     }
 
-   /*  private void verifyDialog(){
-        Log.e("response","Verify!!");
-        LayoutInflater vi = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final LinearLayout verifyLayout = (LinearLayout) vi.inflate(R.layout.verify_dialog, null);
-        AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        adb.setTitle("학번 인증");
-        adb.setView(verifyLayout);
-        adb.setNeutralButton("OK",new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) { // 이 부분에 OK를 눌렀을 때 어떻게 되는지를 추가
-            }
-        }).show();
-    } */
 
     public class galleryAdapter extends BaseAdapter { // 이미지 플리퍼
 
@@ -357,41 +477,6 @@ public class MainActivity extends AppCompatActivity
         listDataChild.put(listDataHeader.get(5), heading6);
         listDataChild.put(listDataHeader.get(6), heading7);
         listDataChild.put(listDataHeader.get(7), heading8);
-
-       /* ExpandedMenuModel item1 = new ExpandedMenuModel();
-        item1.setIconName("학과소개");
-        item1.setIconImg(android.R.drawable.ic_delete);
-        // Adding data header
-        listDataHeader.add(item1);
-
-        ExpandedMenuModel item2 = new ExpandedMenuModel();
-        item2.setIconName("heading2");
-        item2.setIconImg(android.R.drawable.ic_delete);
-        listDataHeader.add(item2);
-
-        ExpandedMenuModel item3 = new ExpandedMenuModel();
-        item3.setIconName("heading3");
-        listDataHeader.add(item3);
-
-        // Adding child data
-        List<String> heading1 = new ArrayList<String>();
-        heading1.add("Submenu of item 1");
-
-        List<String> heading2 = new ArrayList<String>();
-        heading2.add("Submenu of item 2");
-        heading2.add("Submenu of item 2");
-        heading2.add("Submenu of item 2");
-
-        List<String> heading3 = new ArrayList<String>();
-        heading3.add("hi");
-
-        listDataChild.put(listDataHeader.get(0), heading1);// Header, Child data
-        listDataChild.put(listDataHeader.get(1), heading2);
-        listDataChild.put(listDataHeader.get(2), heading3); */
-
-
-
-
     }
 
     @Override
