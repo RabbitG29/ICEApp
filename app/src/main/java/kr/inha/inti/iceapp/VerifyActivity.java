@@ -17,13 +17,13 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import static kr.inha.inti.iceapp.R.layout.activity_verify;
+import static kr.inha.inti.iceapp.R.layout.password_dialog;
 
 /**
  * Created by KDH on 2017-07-24.
  */
 
 public class VerifyActivity extends AppCompatActivity {
-    private long lastTimeBackPressed;
     final Context context = this;
     EditText inputId;
     EditText inputPassword;
@@ -49,10 +49,8 @@ public class VerifyActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                 Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                // 이 부분을 인증이 성공했을 부분으로 해야 함
-
-                startActivity(intent);
+                //인증이 성공할 경우 메인 화면으로
+                //인증이 실패할 경우 재로그인하게 해야함
                 finish();
             }
         });
@@ -68,17 +66,18 @@ public class VerifyActivity extends AppCompatActivity {
                 alertDialogBuilder.show();
             }
         });
-    }
 
-    @Override
-    public void onBackPressed() {
-            if (System.currentTimeMillis() - lastTimeBackPressed < 1500) {
-                finish();
-                return;
+        Button forgetPassword = (Button)findViewById(R.id.button_password);
+        forgetPassword.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder adb = new AlertDialog.Builder(context);
+                adb.setTitle("비밀번호 초기화");
+                adb.setView(password_dialog);
+                adb.create();
+                adb.show();
             }
-            Toast.makeText(this, "'뒤로' 버튼을 한 번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
-            lastTimeBackPressed = System.currentTimeMillis();
-
+        });
     }
 
     @Override

@@ -25,9 +25,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
 import android.widget.BaseAdapter;
 //import android.widget.ExpandableListView;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,8 +42,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import android.support.design.widget.NavigationView;
+import android.widget.ToggleButton;
 
-import static kr.inha.inti.iceapp.R.id.fab;
 
 public class MainActivity extends AppCompatActivity
          {
@@ -254,13 +256,41 @@ public class MainActivity extends AppCompatActivity
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        Button pcVersion = (Button)findViewById(R.id.button_pcVersion);
+        pcVersion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ice.inha.ac.kr"));
 
+                startActivity(intent);
+            }
+        });
 
+        final ToggleButton loginout = (ToggleButton) this.findViewById(R.id.toggle_login);
+        loginout.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                if(loginout.isChecked()) {
+                    // 인증이 성공하면 텍스트가 바뀌도록 하고 그렇지 않으면 그대로 둔다.
+                    // 토글을 로그인 상태에 따라 변화를 줄 수 있을까?
+                    Intent intent = new Intent(getApplicationContext(),VerifyActivity.class);
+                    startActivity(intent);
+
+                    // loginout.setChecked(false); 를 사용하면 된다.
+
+                }
+
+                else{
+
+                    // 로그아웃은 실패할 경우가 없으므로 로그아웃 처리 후 로그인으로 바꾸어 준다.
+                    loginout.setText("로그인");
+                }
+            }
+        });
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-    }
+    } //onCreate 끝
 
     @Override
     protected void onResume() {
