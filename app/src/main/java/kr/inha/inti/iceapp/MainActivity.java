@@ -241,15 +241,6 @@ public class MainActivity extends AppCompatActivity
         avf.setAdapter(new galleryAdapter(this));
         avf.startFlipping();
 
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -271,7 +262,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v) {
                 if(loginout.isChecked()) {
                     // 인증이 성공하면 텍스트가 바뀌도록 하고 그렇지 않으면 그대로 둔다.
-                    // 토글을 로그인 상태에 따라 변화를 줄 수 있을까?
                     Intent intent = new Intent(getApplicationContext(),VerifyActivity.class);
                     startActivity(intent);
 
@@ -381,40 +371,6 @@ public class MainActivity extends AppCompatActivity
             return convertView;
         }
     }
-
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    /*@Override
-    public boolean onNavigationItemSelected(MenuItem item) { // 각각의 버튼을 눌렀을 때 어떻게 동작하는지
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.introduce_ICE) {
-            // Handle the camera action
-        } else if (id == R.id.professor) {
-
-        } else if (id == R.id.about_ICE) {
-
-        } else if (id == R.id.about_class) {
-
-        } else if (id == R.id.student_action) {
-
-        } else if (id == R.id.graduation_project) {
-
-        } else if (id == R.id.information) {
-
-        } else if (id == R.id.semina_room) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }*/
 
 
     private void prepareListData() {
