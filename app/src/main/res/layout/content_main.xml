@@ -24,7 +24,7 @@
         android:id="@+id/image_flips"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:flipInterval="2000"></AdapterViewFlipper>
+        android:flipInterval="3000"></AdapterViewFlipper>
 
             <ImageButton
                 android:layout_width="110dp"
@@ -132,6 +132,35 @@
             android:id="@+id/button_pcVersion"
             android:text="PC버전"/>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ff0000"
+                android:text="개인정보 처리 방침"
+                android:id="@+id/personal_information"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/button_pcVersion"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ff0000"
+                android:text="이메일주소 무단 수집거부"
+                android:id="@+id/email_refusion"
+                android:layout_below="@id/button_pcVersion"
+                android:layout_centerHorizontal="true"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00ff0000"
+                android:text="영상정보처리기기\n관리방침"
+                android:id="@+id/multi_media"
+                android:layout_below="@id/button_pcVersion"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"/>
+
 
 
             <ToggleButton
@@ -147,7 +176,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/button_pcVersion"
+                android:layout_below="@id/personal_information"
                 android:layout_centerHorizontal="true"
                 android:gravity="center_horizontal"
                 android:text="402-751 인천광역시 남구 용현동 253\nTel.032)860-7430-1\nFax.032)873-8970\nCopyright ⓒ 2017 INHA UNIVERSITY\nAll Rights Reserved.\n만든 이들 : 인트아이"/>

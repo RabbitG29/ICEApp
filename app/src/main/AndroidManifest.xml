@@ -17,6 +17,12 @@
 
             <category android:name="android.intent.category.BROWSABLE" />
         </activity>
+        <activity android:name=".DiagramActivity"
+            android:label="ICE App > 이수체계도"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <category android:name="android.intent.category.BROWSABLE" />
+        </activity>
         <activity android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/app_name">

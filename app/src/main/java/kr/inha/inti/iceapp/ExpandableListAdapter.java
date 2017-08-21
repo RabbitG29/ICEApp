@@ -43,7 +43,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public int getChildrenCount(int groupPosition) {
         int childCount = 0;
-        if (groupPosition != 8) {
+        if (groupPosition != 9) { // 이 부분 숫자인 포지션은 저장이 안됨 -> Parent Group을 늘리면 숫자도 늘려줘야 함
             childCount = this.mListDataChild.get(this.mListDataHeader.get(groupPosition))
                     .size();
         }
